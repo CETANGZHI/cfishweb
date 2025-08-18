@@ -7,6 +7,11 @@ import path from 'path'
 export default defineConfig({
   base: "/",
   plugins: [react(),tailwindcss()],
+  esbuild: {
+    loader: 'jsx',
+    include: /\.jsx?$/,
+    exclude: /node_modules/,
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
