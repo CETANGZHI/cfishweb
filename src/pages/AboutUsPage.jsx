@@ -1,0 +1,30 @@
+import React from 'react';
+
+const AboutUsPage = () => {
+  return (
+    <div className="container mx-auto p-8">
+      <h1 className="text-4xl font-bold mb-8">关于我们</h1>
+      <div className="space-y-6 text-lg text-muted-foreground">
+        <p>
+          CFISH 是一个创新的去中心化NFT交易平台，致力于为数字艺术品、收藏品和游戏资产提供一个安全、高效、用户友好的交易环境。我们相信区块链技术将彻底改变数字所有权和价值交换的方式，CFISH正是这一愿景的实践者。
+        </p>
+        <p>
+          我们的平台基于Solana区块链构建，以其卓越的性能和低廉的交易费用，为用户提供无与伦比的交易体验。CFISH不仅仅是一个市场，更是一个充满活力的社区，连接着艺术家、收藏家和Web3爱好者。
+        </p>
+        <p>
+          在CFISH，您可以轻松地铸造、购买、出售和交换各种NFT。我们还引入了独特的“以物换物”功能，以及质押、治理和交易挖矿等机制，旨在为用户创造更多价值和参与机会。
+        </p>
+        <p>
+          我们的团队由一群对区块链技术充满热情、经验丰富的开发者、设计师和社区运营者组成。我们致力于不断创新，为用户提供最前沿、最优质的NFT交易服务。
+        </p>
+        <p>
+          感谢您选择CFISH，与我们一同探索Web3的无限可能！
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default AboutUsPage;
+
+
