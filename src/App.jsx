@@ -19,7 +19,7 @@ import {
   LazyCommunityPage,
   LazyFavoritesCartPage,
   LazyHelpFAQPage,
-  LazyLoginPage,
+
   LazyAboutUsPage,
   LazySellerAlbumPage,
   LazyNotificationCenterPage,
@@ -57,7 +57,7 @@ function App() {
               <Route path="/wallet" element={<LazyWalletPage />} />
               <Route path="/settings" element={<LazySettingsPage />} />
               <Route path="/help" element={<LazyHelpFAQPage />} />
-              <Route path="/login" element={<LazyLoginPage />} />
+
               <Route path="/about" element={<LazyAboutUsPage />} />
               <Route path="/seller-album" element={<LazySellerAlbumPage />} />
               <Route path="/notifications" element={<LazyNotificationCenterPage />} />

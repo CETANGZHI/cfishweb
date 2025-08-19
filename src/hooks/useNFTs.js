@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { mockAPI } from '../data/mockData';
+import { nftApi } from '../utils/api';
 
 export const useNFTs = (filters = {}) => {
   const [nfts, setNfts] = useState([]);
@@ -11,8 +11,8 @@ export const useNFTs = (filters = {}) => {
       try {
         setLoading(true);
         setError(null);
-        const data = await mockAPI.getNFTs(filters);
-        setNfts(data);
+        const response = await nftApi.getNFTs(filters);
+        setNfts(response.data.nfts);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -25,10 +25,11 @@ export const useNFTs = (filters = {}) => {
 
   const toggleLike = async (nftId) => {
     try {
-      const updatedNFT = await mockAPI.toggleLike(nftId);
+      // Assuming the backend returns the updated NFT or a success message
+      await nftApi.likeNFT(nftId);
       setNfts(prevNfts => 
         prevNfts.map(nft => 
-          nft.id === nftId ? updatedNFT : nft
+          nft.id === nftId ? { ...nft, likes_count: nft.likes_count + 1, isLiked: true } : nft
         )
       );
     } catch (err) {
@@ -37,6 +38,7 @@ export const useNFTs = (filters = {}) => {
   };
 
   const toggleCart = (nftId) => {
+    // This is a frontend-only mock for now, as cart API is not fully integrated
     setNfts(prevNfts => 
       prevNfts.map(nft => 
         nft.id === nftId 
@@ -57,8 +59,8 @@ export const useNFTs = (filters = {}) => {
         try {
           setLoading(true);
           setError(null);
-          const data = await mockAPI.getNFTs(filters);
-          setNfts(data);
+          const response = await nftApi.getNFTs(filters);
+          setNfts(response.data.nfts);
         } catch (err) {
           setError(err.message);
         } finally {
@@ -80,8 +82,8 @@ export const useNFTDetail = (nftId) => {
       try {
         setLoading(true);
         setError(null);
-        const data = await mockAPI.getNFTById(nftId);
-        setNft(data);
+        const response = await nftApi.getNFTById(nftId);
+        setNft(response.data);
       } catch (err) {
         setError(err.message);
       } finally {

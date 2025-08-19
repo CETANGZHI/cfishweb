@@ -7,9 +7,7 @@ import {
   Globe, 
   Palette, 
   Bell,
-  Search,
-  User,
-  Settings
+  Search
 } from 'lucide-react';
 import { Button } from './ui/button';
 import { 
@@ -114,27 +112,9 @@ const Navbar = () => {
 
             {/* Wallet Connect */}
             <Button className="btn-primary">
-              <Wallet className="h-4 w-4" />
+              <Wallet className="h-4 w-4 mr-2" />
+              Connect Wallet
             </Button>
-
-            {/* User Menu */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="hover:bg-secondary">
-                  <User className="h-5 w-5" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-48">
-                <DropdownMenuItem className="cursor-pointer">
-                  <User className="mr-2 h-4 w-4" />
-                  {t('common.profile')}
-                </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
-                  <Settings className="mr-2 h-4 w-4" />
-                  {t('common.settings')}
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
           </div>
 
           {/* Mobile menu button */}

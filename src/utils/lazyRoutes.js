@@ -97,7 +97,7 @@ export const LazyBarterPage = createLazyRoute(() => import('../pages/BarterPage'
 export const LazyCommunityPage = createLazyRoute(() => import('../pages/CommunityPage'));
 export const LazyFavoritesCartPage = createLazyRoute(() => import('../pages/FavoritesCartPage'));
 export const LazyHelpFAQPage = createLazyRoute(() => import('../pages/HelpFAQPage'));
-export const LazyLoginPage = createLazyRoute(() => import('../pages/LoginPage'));
+
 export const LazyAboutUsPage = createLazyRoute(() => import('../pages/AboutUsPage'));
 
 // 新增功能页面
