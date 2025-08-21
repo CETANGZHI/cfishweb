@@ -17,6 +17,12 @@ from src.routes.cart import cart_bp
 from src.routes.favorites import favorites_bp
 from src.routes.comments import comments_bp
 from src.routes.search import search_bp
+from src.routes.barter import barter_bp
+from src.routes.bulk_operations import bulk_operations_bp
+from src.routes.activity_management import activity_management_bp
+from src.routes.intent_pool import intent_pool_bp
+from src.routes.auction_management import auction_management_bp
+from src.routes.dispute_resolution import dispute_resolution_bp
 
 from src.routes.notification import notification_bp
 
@@ -39,6 +45,12 @@ app.register_blueprint(cart_bp, url_prefix='/api')
 app.register_blueprint(favorites_bp, url_prefix='/api')
 app.register_blueprint(comments_bp, url_prefix='/api')
 app.register_blueprint(search_bp, url_prefix='/api')
+app.register_blueprint(barter_bp, url_prefix='/api')
+app.register_blueprint(bulk_operations_bp, url_prefix='/api')
+app.register_blueprint(activity_management_bp, url_prefix='/api')
+app.register_blueprint(intent_pool_bp, url_prefix='/api')
+app.register_blueprint(auction_management_bp, url_prefix='/api')
+app.register_blueprint(dispute_resolution_bp, url_prefix='/api')
 
 # uncomment if you need to use database
 app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{os.path.join(os.path.dirname(__file__), 'database', 'app.db')}"
